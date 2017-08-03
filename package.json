@@ -3,5 +3,8 @@
   "version": "0.0.0",
   "main": "index.js",
   "author": "gouf <innocent.zero@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
 }
