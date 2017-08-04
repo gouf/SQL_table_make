@@ -33,7 +33,7 @@ function collectRowValuesAndConvertToInsertQuery() {
     [1, 2, 3, 4].map(function(index) { // HTML で使用する</input> にinput + 1~4 までのクラス名を指定済み
       // input で入力済みのデータを行ごとに収集
       return (
-        $(''.concat('.input', index)).get()
+        $(''.concat('.input-', index)).get()
         .map(function(elm) { return elm.value })
         .filter(function(elm) { return elm.length != 0 })
       )
