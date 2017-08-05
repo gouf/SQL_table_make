@@ -69,6 +69,7 @@ function buildInsertQuery(arrayValues) {
       switch(true) {
         case value === 'Null':
           return 'Null'
+        case parseFloat(value).toString().length != value.length: // Phone number or others
         case isNaN(parseInt(value)):
           return ''.concat('"', value, '"')
         default:
