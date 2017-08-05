@@ -80,7 +80,7 @@ function buildInsertQuery(arrayValues) {
 }
 
 $(function() {
-  $('#app .row input').on('keyup', function(_) {
+  $('#app input').on('keyup', function(_) {
     applyQueryStringToDisplay()
   })
 
