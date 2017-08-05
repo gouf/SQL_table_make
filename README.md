@@ -15,3 +15,5 @@ open http://localhost:3000/index.html
 like bellow:
 
 ![image](https://t.gyazo.com/teams/liteskyblue/09579b4930c424de2fc7ca89d5f156e3.png)
+
+Then, copy SQL and paste to [SQL Fiddle](http://sqlfiddle.com)!
