@@ -1,7 +1,7 @@
 function applyQueryStringToDisplay() {
-  insertQueries = collectRowValuesAndConvertToInsertQuery()
+  var insertQueries = collectRowValuesAndConvertToInsertQuery()
 
-  allQueries =
+  var allQueries =
     ''.concat(
       buildColumnQuery(), "\n",
       insertQueries.join("\n"), "\n"
@@ -21,7 +21,7 @@ function tableNames() {
 }
 
 function nameAndType(str) {
-  splitedData = str.split(':') // eg. columnName:varchar(255)
+  var splitedData = str.split(':') // eg. columnName:varchar(255)
 
   return {name: splitedData[0], type: splitedData[1]}
 }
@@ -29,7 +29,7 @@ function nameAndType(str) {
 // FIXME: 仕事内容が多すぎるので複数に分割する
 function collectRowValuesAndConvertToInsertQuery() {
   // FIXME: 配列で1~4 直接指定ではなくHTML の内容から<input/> の内容を取り出す
-  inputValues =
+  var inputValues =
     [1, 2, 3, 4].map(function(index) { // HTML で使用する</input> にinput + 1~4 までのクラス名を指定済み
       // input で入力済みのデータを行ごとに収集
       return (
@@ -48,7 +48,7 @@ function collectRowValuesAndConvertToInsertQuery() {
 }
 
 function buildColumnQuery() {
-  columnNames =
+  var columnNames =
     tableNames().map(function(name) {
       return ''.concat('    ', nameAndType(name).name, ' ', nameAndType(name).type)
     }).join(",\n")
@@ -61,8 +61,8 @@ function buildColumnQuery() {
 }
 
 function buildInsertQuery(arrayValues) {
-  name = tableNames().map(function (name) { return nameAndType(name).name }).join(', ')
-  values =
+  var name = tableNames().map(function (name) { return nameAndType(name).name }).join(', ')
+  var values =
     arrayValues.map(function (value) {
       switch(true) {
         case value === 'Null':
