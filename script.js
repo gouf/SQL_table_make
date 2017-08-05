@@ -10,9 +10,13 @@ function applyQueryStringToDisplay() {
   $('#result').text(allQueries)
 }
 
+function tableName() {
+  return $('.table-name input').first().val()
+}
+
 function tableNames() {
   return (
-    $('#app .table-name input').get().map(function(elm) {
+    $('#app .table-names input').get().map(function(elm) {
       return elm.value
     }).filter(function(elm) {
       return elm.length != 0
@@ -53,11 +57,9 @@ function buildColumnQuery() {
       return ''.concat('    ', nameAndType(name).name, ' ', nameAndType(name).type)
     }).join(",\n")
 
-  tableName = 'Table1'
-
-  return ''.concat('CREATE TABLE ', tableName, " (\n",
+  return ''.concat('CREATE TABLE IF NOT EXISTS ', tableName(), " (\n",
     columnNames, "\n",
-    ') DEFAULT CHARSET=utf8;')
+    ') DEFAULT CHARSET=utf8;', "\n")
 }
 
 function buildInsertQuery(arrayValues) {
