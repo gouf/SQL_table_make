@@ -33,6 +33,7 @@ function nameAndType(str) {
 // FIXME: 仕事内容が多すぎるので複数に分割する
 function collectRowValuesAndConvertToInsertQuery() {
   // FIXME: 配列で1~4 直接指定ではなくHTML の内容から<input/> の内容を取り出す
+  // [+]/[-] ボタンでの入力項目の増減に対応させたい
   var inputValues =
     [1, 2, 3, 4].map(function(index) { // HTML で使用する</input> にinput + 1~4 までのクラス名を指定済み
       // input で入力済みのデータを行ごとに収集
