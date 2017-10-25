@@ -1,6 +1,6 @@
 function applyQueryStringToDisplay() {
   var inputValues = collectRowValues()
-  var insertQueries = convertToInsertQuery(inputValues)
+  var insertQueries = convertToInsertQueries(inputValues)
 
   var allQueries =
     ''.concat(
@@ -47,7 +47,7 @@ function collectRowValues() {
   return inputValues
 }
 
-function convertToInsertQuery(inputValues) {
+function convertToInsertQueries(inputValues) {
   return (
     inputValues.map(function(values) {
       // input で入力された内容をINSERT 構文に変換
