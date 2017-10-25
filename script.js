@@ -76,7 +76,7 @@ function buildInsertQuery(arrayValues) {
           return value
       }
     }).join(', ')
-  return ''.concat('INSERT INTO Table1(', name, ') VALUES(', values, ');')
+  return ''.concat('INSERT INTO ', tableName(), '(', name, ') VALUES(', values, ');')
 }
 
 $(function() {
