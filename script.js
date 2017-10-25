@@ -84,10 +84,12 @@ function buildInsertQuery(arrayValues) {
   return ''.concat('INSERT INTO ', tableName(), '(', name, ') VALUES(', values, ');')
 }
 
+// Initialize
 $(function() {
   $('#app input').on('keyup', function(_) {
     applyQueryStringToDisplay()
   })
 
+  // Initial run
   applyQueryStringToDisplay()
 })
