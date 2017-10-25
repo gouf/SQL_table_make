@@ -4,7 +4,7 @@ function clearAll() {
   })
 }
 
-function applyQueryStringToDisplay() {
+function updateQueryStringToDisplay() {
   var inputValues = collectRowValues()
   var insertQueries = convertToInsertQueries(inputValues)
 
@@ -92,11 +92,11 @@ function buildInsertQuery(arrayValues) {
 
 // Initialize
 $(function() {
-  $('#app #clear-all').on('click', function() { clearAll(); applyQueryStringToDisplay() })
+  $('#app #clear-all').on('click', function() { clearAll(); updateQueryStringToDisplay() })
   $('#app input').on('keyup', function(_) {
-    applyQueryStringToDisplay()
+    updateQueryStringToDisplay()
   })
 
   // Initial run
-  applyQueryStringToDisplay()
+  updateQueryStringToDisplay()
 })
