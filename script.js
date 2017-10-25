@@ -1,5 +1,6 @@
 function applyQueryStringToDisplay() {
-  var insertQueries = collectRowValuesAndConvertToInsertQuery()
+  var inputValues = collectRowValues()
+  var insertQueries = convertToInsertQuery(inputValues)
 
   var allQueries =
     ''.concat(
@@ -30,8 +31,7 @@ function nameAndType(str) {
   return {name: splitedData[0], type: splitedData[1]}
 }
 
-// FIXME: 仕事内容が多すぎるので複数に分割する
-function collectRowValuesAndConvertToInsertQuery() {
+function collectRowValues() {
   // FIXME: 配列で1~4 直接指定ではなくHTML の内容から<input/> の内容を取り出す
   // [+]/[-] ボタンでの入力項目の増減に対応させたい
   var inputValues =
@@ -44,6 +44,10 @@ function collectRowValuesAndConvertToInsertQuery() {
       )
     }).filter(function(array) { return array.length != 0 })
 
+  return inputValues
+}
+
+function convertToInsertQuery(inputValues) {
   return (
     inputValues.map(function(values) {
       // input で入力された内容をINSERT 構文に変換
